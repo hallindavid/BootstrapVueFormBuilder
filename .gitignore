@@ -1,1 +1,5 @@
 node_modules/
+.firebase/hosting.ZGlzdA.cache
+.firebaserc
+firebase.json
+dist/
