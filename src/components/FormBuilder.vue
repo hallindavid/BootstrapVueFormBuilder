@@ -4,9 +4,192 @@
       >Toggle Editor</b-btn
     >
     <b-btn @click="collapse_all" size="sm" class="mx-1" variant="outline-primary">Collapse All</b-btn>
+    <b-btn @click="show_defaults = !show_defaults" size="sm" class="mx-1" variant="outline-info">Set Defaults</b-btn>
     <b-row class="mt-1">
       <b-col cols="6" v-show="show_editor">
-        
+        <b-card v-if="show_defaults" title="Default Field Setup">
+          <strong>column size</strong>
+          <b-row>
+            <b-col>
+              <b-form-group size="sm" label-cols="6" label="-">
+                <b-form-input
+                  v-model="item_template.cols"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group size="sm" label-cols="6" label="SM">
+                <b-form-input
+                  v-model="item_template.cols_sm"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group size="sm" label-cols="6" label="MD">
+                <b-form-input
+                  v-model="item_template.cols_md"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group size="sm" label-cols="6" label="LG">
+                <b-form-input
+                  v-model="item_template.cols_lg"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group size="sm" label-cols="6" label="XL">
+                <b-form-input
+                  v-model="item_template.cols_xl"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+          </b-row>
+          <strong>label alignment</strong>
+          <b-row>
+            <b-col>
+              <b-form-group label="-" size="sm" label-cols="6">
+                <b-form-select
+                  v-model="item_template.label_align"
+                  size="sm"
+                  @change="save()"
+                  :options="alignments"
+                ></b-form-select>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="SM" size="sm" label-cols="6">
+                <b-form-select
+                  v-model="item_template.label_align_sm"
+                  size="sm"
+                  @change="save()"
+                  :options="alignments"
+                ></b-form-select>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="MD" size="sm" label-cols="6">
+                <b-form-select
+                  v-model="item_template.label_align_md"
+                  size="sm"
+                  @change="save()"
+                  :options="alignments"
+                ></b-form-select>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="LG" size="sm" label-cols="6">
+                <b-form-select
+                  v-model="item_template.label_align_lg"
+                  size="sm"
+                  @change="save()"
+                  :options="alignments"
+                ></b-form-select>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="XL" size="sm" label-cols="6">
+                <b-form-select
+                  v-model="item_template.label_align_xl"
+                  size="sm"
+                  @change="save()"
+                  :options="alignments"
+                ></b-form-select>
+              </b-form-group>
+            </b-col>
+          </b-row>
+          <strong>label size</strong>
+          <b-row>
+            <b-col>
+              <b-form-group label="-" label-cols="6" size="sm">
+                <b-form-input
+                  v-model="item_template.label_cols"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="SM" label-cols="6" size="sm">
+                <b-form-input
+                  v-model="item_template.label_cols_sm"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="MD" label-cols="6" size="sm">
+                <b-form-input
+                  v-model="item_template.label_cols_md"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="LG" label-cols="6" size="sm">
+                <b-form-input
+                  v-model="item_template.label_cols_lg"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+            <b-col>
+              <b-form-group label="XL" label-cols="6" size="sm">
+                <b-form-input
+                  v-model="item_template.label_cols_xl"
+                  size="sm"
+                  @change="save()"
+                  min="0"
+                  max="12"
+                  type="number"
+                ></b-form-input>
+              </b-form-group>
+            </b-col>
+          </b-row>
+
+        </b-card>        
+
         <rowbuilder
           v-for="(row, row_index) in rows"
           @add_item="add_item_to_row"
@@ -82,9 +265,11 @@ export default {
   data: function() {
     return {
       show_editor: true,
+      show_defaults: false,
       current_tab: "code",
       model_prefix: "",
       rows: [],
+      alignments: ["", "left", "center", "right"],
       item_template: {
         id: "",
         show_editor: false,

@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -m 'auto commit [ci skip]' -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
