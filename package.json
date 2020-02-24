@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && echo 'bootstrapvueformbuilder.com' > dist/CNAME",
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -m 'auto commit [ci skip]' -d dist"
   },
