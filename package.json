@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
@@ -30,6 +30,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "gh-pages": "^2.2.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
