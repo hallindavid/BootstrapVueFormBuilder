@@ -3,7 +3,7 @@
      <header>
       <!-- Fixed navbar -->
       <b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
-        <b-navbar-brand href="/">Bootstrap Vue Form Builder</b-navbar-brand>
+        <b-navbar-brand to="/">Bootstrap Vue Form Builder</b-navbar-brand>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item to="/" >Home</b-nav-item>
