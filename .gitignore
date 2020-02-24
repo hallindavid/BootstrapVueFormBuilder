@@ -3,3 +3,4 @@ node_modules/
 .firebaserc
 firebase.json
 dist/
+firebase_deployment_code
