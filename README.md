@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/hallindavid/BootstrapVueFormBuilder/tree/master.svg?style=svg)](https://circleci.com/gh/hallindavid/BootstrapVueFormBuilder/tree/master)
+
 <center><h1>Bootstrap Vue Form Builder</h1>
 <img src="src/assets/logo.png"></center><br />
 
