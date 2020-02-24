@@ -2,5 +2,4 @@ node_modules/
 .firebase/hosting.ZGlzdA.cache
 .firebaserc
 firebase.json
-dist/
 firebase_deployment_code
