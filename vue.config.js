@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: "BootstrapVueFormBuilder"
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/BootstrapVueFormBuilder/'
+    : '/'
 }
