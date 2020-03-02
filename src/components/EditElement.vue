@@ -357,6 +357,7 @@ export default {
         { value: "select", text: "Select Dropdown" },
         { value: "checkbox", text: "Checkbox/Switch" },
         { value: "textarea", text: "Text Area" },
+        { value: "datepicker", text: "Date Picker" },
       ],
       item: {
         id: "",

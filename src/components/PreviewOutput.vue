@@ -27,6 +27,8 @@
 					return "preview-select";
 				} else if (element.type == "textarea") {
 					return "preview-form-textarea";
+				} else if (element.type == "datepicker") {
+					return "preview-datepicker";
 				} else {
 					return "preview-form-input";
 				}
