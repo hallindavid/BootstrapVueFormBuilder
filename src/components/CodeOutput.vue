@@ -291,6 +291,7 @@ export default {
 
       if (item.scaffold_validation) {
         form_group_attributes.push(':state="is_' + item.model + '_valid"');
+        input_attributes.push(':state="is_' + item.model + '_valid"');
       }
 
       if (item.label.length > 0) {
@@ -463,6 +464,7 @@ export default {
 
       if (item.scaffold_validation) {
         form_group_attributes.push(':state="is_' + item.model + '_valid"');
+        input_attributes.push(':state="is_' + item.model + '_valid"');
       }
 
       if (item.label.length > 0) {
@@ -626,6 +628,7 @@ export default {
 
       if (item.scaffold_validation) {
         form_group_attributes.push(':state="is_' + item.model + '_valid"');
+        input_attributes.push(':state="is_' + item.model + '_valid"');
       }
 
       if (item.label.length > 0) {
@@ -782,6 +785,7 @@ export default {
 
       if (item.scaffold_validation) {
         form_group_attributes.push(':state="is_' + item.model + '_valid"');
+        input_attributes.push(':state="is_' + item.model + '_valid"');
       }
 
       if (item.label.length > 0) {
