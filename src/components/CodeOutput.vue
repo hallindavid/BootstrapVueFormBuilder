@@ -1,9 +1,9 @@
 <template>
   <pre>
 &lt;template&gt;
-<template v-for="row in rows">   &lt;row&gt;
+<template v-for="row in rows">   &lt;b-row&gt;
 <template v-for="item in row">{{ output_element(item) }}</template>
-   &lt;/row&gt;</template>
+   &lt;/b-row&gt;</template>
 &lt;/template&gt;
 
 &lt;script&gt;
