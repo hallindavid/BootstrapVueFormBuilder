@@ -217,7 +217,7 @@
           :value="row"
           appendTo=".rowbuilder"
           :useDragHandle="true">
-          <editelement v-for="(item,item_index) in row" 
+          <editelement v-for="(item,item_index) in row.items" 
 							@item_updated="item_updated"
 							@item_removed="item_removed"
 							@duplicate_item="duplicate_item"
@@ -338,11 +338,11 @@ export default {
       });
     },
     add_row() {
-      let new_row = [];
+      let new_row = {custom_class:"", items:[]};
       var d = new Date();
       let new_item = JSON.parse(JSON.stringify(this.item_template));
       new_item.id = d.getTime();
-      new_row.push(new_item);
+      new_row.items.push(new_item);
 
       this.rows.push(new_row);
     },
@@ -353,7 +353,7 @@ export default {
       var d = new Date();
       let new_item = JSON.parse(JSON.stringify(this.item_template));
       new_item.id = d.getTime();
-      this.rows[row_index].push(new_item);
+      this.rows[row_index].items.push(new_item);
     },
     delete_row(row_index) {
       if (confirm("Are you sure you want to delete this row?")) {
@@ -367,10 +367,10 @@ export default {
       this.rows[row_index].push(new_item);
     },
     item_updated(row_index, item_index, new_item) {
-      this.$set(this.rows[row_index], item_index, new_item);
+      this.$set(this.rows[row_index].items, item_index, new_item);
     },
     item_removed(row_index, item_index) {
-      this.rows[row_index].splice(item_index,1);
+      this.rows[row_index].items.splice(item_index,1);
     },
     update_order(payload,row_index) {
       this.$set(this.rows, row_index, payload);

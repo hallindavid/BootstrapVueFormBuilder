@@ -1,10 +1,10 @@
 <template>
   <pre>
 &lt;template&gt;
-<template v-for="row in rows">   &lt;b-row&gt;
-<template v-for="item in row">{{ output_element(item) }}</template>
-   &lt;/b-row&gt;</template>
-&lt;/template&gt;
+<template v-for="row in rows">   &lt;b-row<template v-if="row.custom_class.length"> class="{{ row.custom_class }}"</template>&gt;
+<template v-for="item in row.items">{{ output_element(item) }}</template>
+   &lt;/b-row&gt;
+</template>&lt;/template&gt;
 
 &lt;script&gt;
 	export default {
@@ -329,7 +329,7 @@ export default {
       retval += this.get_spaces(9) + "</b-form-group>" + this.line_break();
 
       //Wrap up the column wrapper
-      retval += this.get_spaces(6) + "</b-col>" + this.line_break();
+      retval += this.get_spaces(6) + "</b-col>";
       return retval;
     },
     output_select(item) {
@@ -477,7 +477,7 @@ export default {
       retval += this.get_spaces(9) + "</b-form-group>" + this.line_break();
 
       //Wrap up the column wrapper
-      retval += this.get_spaces(6) + "</b-col>" + this.line_break();
+      retval += this.get_spaces(6) + "</b-col>";
       return retval;
     },
     line_break() {
