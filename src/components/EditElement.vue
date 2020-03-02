@@ -84,6 +84,18 @@
             </b-form-group>
           </b-col>
         </b-row>
+        <b-row v-if="show_num_rows">
+          <b-col>
+            <b-form-group size="sm" label-cols="6" label="num rows">
+              <b-form-input v-model="item.num_rows" size="sm" @change="save()" type="number"></b-form-input>
+            </b-form-group>
+          </b-col>
+          <b-col>
+            <b-form-group size="sm" label-cols="6" label="max rows">
+              <b-form-input v-model="item.max_rows" size="sm" @change="save()" type="number"></b-form-input>
+            </b-form-group>
+          </b-col>
+        </b-row>
         <b-row v-if="show_min_max">
           <b-col>
             <b-form-group size="sm" label-cols="6" label="Min">
@@ -337,13 +349,14 @@ export default {
       alignments: ["", "left", "center", "right"],
       types: [
         { value: null, text: "Select Field Type" },
-        { value: "select", text: "select" },
         { value: "input-text", text: "Input - Text" },
         { value: "input-number", text: "Input - Number" },
         { value: "input-email", text: "Input - Email" },
         { value: "input-password", text: "Input - Password" },
         { value: "input-search", text: "Input - Search" },
-        { value: "checkbox", text: "checkbox" }
+        { value: "select", text: "Select Dropdown" },
+        { value: "checkbox", text: "Checkbox/Switch" },
+        { value: "textarea", text: "Text Area" },
       ],
       item: {
         id: "",
@@ -361,6 +374,8 @@ export default {
         placeholder: "",
         min: "",
         max: "",
+        num_rows:"",
+        max_rows:"",
         size: "md",
         step: "",
         cols: "",
@@ -455,6 +470,9 @@ export default {
     },
     show_min_max() {
       return this.item.type == "input-number";
+    },
+    show_num_rows() {
+      return this.item.type == "textarea";
     }
   },
   methods: {

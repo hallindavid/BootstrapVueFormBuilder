@@ -25,6 +25,8 @@
 				} else if (element.type == "select")
 				{
 					return "preview-select";
+				} else if (element.type == "textarea") {
+					return "preview-form-textarea";
 				} else {
 					return "preview-form-input";
 				}

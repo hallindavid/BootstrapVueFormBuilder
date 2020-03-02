@@ -295,6 +295,8 @@ export default {
         placeholder: "",
         min: "",
         max: "",
+        num_rows:"",
+        max_rows:"",
         size: "md",
         step: "",
         cols: "",

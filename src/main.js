@@ -43,6 +43,7 @@ Vue.component('editelement', require('./components/EditElement.vue').default);
 Vue.component('code-output', require('./components/CodeOutput.vue').default);
 Vue.component('preview-output', require('./components/PreviewOutput.vue').default);
 Vue.component('preview-form-input', require('./components/PreviewFormInput.vue').default);
+Vue.component('preview-form-textarea', require('./components/PreviewFormTextarea.vue').default);
 Vue.component('preview-checkbox', require('./components/PreviewCheckbox.vue').default);
 Vue.component('preview-select', require('./components/PreviewSelect.vue').default);
 Vue.component('import-export-panel', require('./components/ImportExportPanel.vue').default);
