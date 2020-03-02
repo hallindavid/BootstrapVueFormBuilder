@@ -5,7 +5,7 @@
 
 
 ## Demos (<a href="https://hallindavid.github.io/BootstrapVueFormBuilder/#/builder">Production Deployment</a>)
-Quickly scaffold outforms and preview them in real time
+Quickly scaffold BootstrapVue form components and preview them in real time
 
 <center><img width="80%" src="readme_files/quick-scaffold.gif"></center>
 
