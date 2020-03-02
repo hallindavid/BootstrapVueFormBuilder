@@ -4,11 +4,22 @@
       >Toggle Editor</b-btn
     >
     <b-btn @click="collapse_all" size="sm" class="mx-1" variant="outline-primary">Collapse All</b-btn>
-    <b-btn @click="show_defaults = !show_defaults" size="sm" class="mx-1" variant="outline-info">Set Defaults</b-btn>
+    <b-btn @click="show_defaults = !show_defaults" size="sm" class="mx-1" variant="outline-info">Config/Defaults</b-btn>
     <b-row class="mt-1">
       <b-col cols="6" v-show="show_editor">
-        <b-card v-if="show_defaults" title="Default Field Setup">
-          <strong>column size</strong>
+        <b-card v-if="show_defaults" title="config / defaults">
+          <b-row>
+            <b-col>
+          <b-form-group
+            size="sm"
+              label-cols="3"
+              description="eg: first_name -> part_1_first_name"
+              label="model prefix">
+              <b-form-input size="sm" type="text" v-model="model_prefix"></b-form-input>
+            </b-form-group>
+            </b-col>
+          </b-row>
+          <span>column size</span>
           <b-row>
             <b-col>
               <b-form-group size="sm" label-cols="6" label="-">
@@ -71,7 +82,7 @@
               </b-form-group>
             </b-col>
           </b-row>
-          <strong>label alignment</strong>
+          <span>label alignment</span>
           <b-row>
             <b-col>
               <b-form-group label="-" size="sm" label-cols="6">
@@ -124,7 +135,7 @@
               </b-form-group>
             </b-col>
           </b-row>
-          <strong>label size</strong>
+          <span>label size</span>
           <b-row>
             <b-col>
               <b-form-group label="-" label-cols="6" size="sm">
@@ -221,15 +232,6 @@
           <b-col cols="3">
             <b-button size="sm" block variant="secondary" @click="add_row">
               <font-awesome-icon icon="plus" /></b-button>
-          </b-col>
-          <b-col>
-            <b-form-group
-            size="sm"
-              label-cols="3"
-              description="eg: first_name -> part_1_first_name"
-              label="Model Prefix">
-              <b-form-input size="sm" type="text" v-model="model_prefix"></b-form-input>
-            </b-form-group>
           </b-col>
         </b-row>
       </b-col>
