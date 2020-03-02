@@ -9,9 +9,6 @@
 	import { ContainerMixin  } from 'vue-slicksort';
 
 	export default {
-		mounted() {
-			this.add_item();
-		},
 		props: {
 			row_index: {
 				type: Number,

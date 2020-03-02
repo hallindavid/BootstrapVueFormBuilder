@@ -308,7 +308,7 @@ export default {
     };
   },
   mounted() {
-    this.rows.push([]);
+    this.add_row();
   },
   computed: {
     get_current_tab() {
@@ -329,7 +329,13 @@ export default {
       });
     },
     add_row() {
-      this.rows.push([]);
+      let new_row = [];
+      var d = new Date();
+      let new_item = JSON.parse(JSON.stringify(this.item_template));
+      new_item.id = d.getTime();
+      new_row.push(new_item);
+
+      this.rows.push(new_row);
     },
     minus_row() {
       this.rows.splice(this.rows.length - 1, 1);
@@ -357,6 +363,7 @@ export default {
     },
     import_rows(rows) {
       this.rows = rows;
+
     }
   }
 };
