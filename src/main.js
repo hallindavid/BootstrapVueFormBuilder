@@ -20,7 +20,7 @@ Vue.use(VueClipboard);
 
 //Import Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlus, faMinus, faTimes, faTrash, faPlay, faCopy, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faMinus, faTimes, faTrash, faPlay, faCopy, faBars, faCaretLeft, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faTwitter, faGithub, faBootstrap, faVuejs, faFontAwesomeAlt, faFacebook, faLinkedin, faReddit, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import router from './router'
@@ -33,6 +33,7 @@ library.add(faTrash);
 library.add(faCopy);
 library.add(faBars);
 library.add(faTimes);
+library.add(faCaretLeft, faCaretDown);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

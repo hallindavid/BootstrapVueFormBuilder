@@ -18,6 +18,12 @@
               <b-form-input size="sm" type="text" v-model="model_prefix"></b-form-input>
             </b-form-group>
             </b-col>
+            <b-col>
+            <b-form-group
+              size="sm">
+                <b-form-checkbox id="scaffold_by_default" :value="true" v-model="item_template.scaffold_validation" switch>Scaffold by default</b-form-checkbox>
+              </b-form-group>
+            </b-col>
           </b-row>
           <span>column size</span>
           <b-row>
@@ -204,6 +210,7 @@
         <rowbuilder
           v-for="(row, row_index) in rows"
           @add_item="add_item_to_row"
+          @delete_row="delete_row"
           @input="update_order($event, row_index)"
           :row_index="row_index"
           :key="row_index"
@@ -347,6 +354,11 @@ export default {
       let new_item = JSON.parse(JSON.stringify(this.item_template));
       new_item.id = d.getTime();
       this.rows[row_index].push(new_item);
+    },
+    delete_row(row_index) {
+      if (confirm("Are you sure you want to delete this row?")) {
+        this.rows.splice(row_index,1);
+      }
     },
     duplicate_item(row_index, item) {
       var d = new Date();
