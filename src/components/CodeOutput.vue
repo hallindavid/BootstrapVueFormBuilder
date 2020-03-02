@@ -71,6 +71,11 @@ export default {
         item => this.text_types.includes(item.type) && item.model.length > 0
       );
     },
+    textarea_models() {
+      return this.all_models.filter(
+        item => item.type == "textarea" && item.model.length > 0
+      );
+    },
     checkbox_models() {
       return this.all_models.filter(
         item => item.type == "checkbox" && item.model.length > 0
@@ -93,6 +98,8 @@ export default {
         return this.output_checkbox(item);
       } else if (item.type == "select") {
         return this.output_select(item);
+      } else if (item.type == "textarea") {
+        return this.output_textarea(item);
       } else {
         return this.output_input_box(item);
       }
@@ -325,6 +332,166 @@ export default {
         "<b-form-input " +
         input_attributes.join(" ") +
         " trim></b-form-input>" +
+        this.line_break();
+      retval += this.get_spaces(9) + "</b-form-group>" + this.line_break();
+
+      //Wrap up the column wrapper
+      retval += this.get_spaces(6) + "</b-col>";
+      return retval;
+    },
+    output_textarea(item) {
+      let retval = "";
+      //Making the column wrapper
+      let attributes = [];
+      if (item.cols.length > 0) {
+        attributes.push('cols="' + item.cols + '"');
+      }
+
+      if (item.cols_sm.length > 0) {
+        attributes.push('sm="' + item.cols_sm + '"');
+      }
+
+      if (item.cols_md.length > 0) {
+        attributes.push('md="' + item.cols_md + '"');
+      }
+
+      if (item.cols_lg.length > 0) {
+        attributes.push('lg="' + item.cols_lg + '"');
+      }
+
+      if (item.cols_xl.length > 0) {
+        attributes.push('xl="' + item.cols_xl + '"');
+      }
+      retval +=
+        this.get_spaces(6) +
+        "<b-col " +
+        attributes.join(" ") +
+        ">" +
+        this.line_break();
+
+      //Collect the Form Group and Input Attributes
+      let form_group_attributes = [];
+      let input_attributes = [];
+      if (item.description.length > 0) {
+        form_group_attributes.push('description="' + item.description + '"');
+      }
+
+      if (item.label_class.length > 0) {
+        form_group_attributes.push('label-class="' + item.label_class + '"');
+      }
+
+      if (item.label_cols.length > 0) {
+        form_group_attributes.push('label-cols="' + item.label_cols + '" ');
+      }
+
+      if (item.label_cols_sm.length > 0) {
+        form_group_attributes.push(
+          'label-cols-sm="' + item.label_cols_sm + '" '
+        );
+      }
+
+      if (item.label_cols_md.length > 0) {
+        form_group_attributes.push(
+          'label-cols-md="' + item.label_cols_md + '" '
+        );
+      }
+
+      if (item.label_cols_lg.length > 0) {
+        form_group_attributes.push(
+          'label-cols-lg="' + item.label_cols_lg + '" '
+        );
+      }
+
+      if (item.label_cols_xl.length > 0) {
+        form_group_attributes.push(
+          'label-cols-xl="' + item.label_cols_xl + '" '
+        );
+      }
+
+      if (item.label_align.length > 0) {
+        form_group_attributes.push('label-align="' + item.label_align + '" ');
+      }
+
+      if (item.label_align_sm.length > 0) {
+        form_group_attributes.push(
+          'label-align-sm="' + item.label_align_sm + '" '
+        );
+      }
+
+      if (item.label_align_md.length > 0) {
+        form_group_attributes.push(
+          'label-align-md="' + item.label_align_md + '" '
+        );
+      }
+
+      if (item.label_align_lg.length > 0) {
+        form_group_attributes.push(
+          'label-align-lg="' + item.label_align_lg + '" '
+        );
+      }
+
+      if (item.label_align_xl.length > 0) {
+        form_group_attributes.push(
+          'label-align-xl="' + item.label_align_xl + '" '
+        );
+      }
+
+      if (item.valid_feedback.length > 0) {
+        form_group_attributes.push(
+          'valid-feedback="' + item.valid_feedback + '" '
+        );
+      }
+
+      if (item.invalid_feedback.length > 0) {
+        form_group_attributes.push(
+          'invalid-feedback="' + item.invalid_feedback + '" '
+        );
+      }
+
+      if (item.scaffold_validation) {
+        form_group_attributes.push(':state="is_' + item.model + '_valid"');
+      }
+
+      if (item.label.length > 0) {
+        form_group_attributes.push('label="' + item.label + '"');
+      }
+
+      if (item.model.length > 0) {
+        form_group_attributes.push('label-for="' + item.model + '"');
+        form_group_attributes.push('id="form_group_' + item.model + '"');
+        input_attributes.push('id="' + item.model + '"');
+        input_attributes.push('v-model="' + item.model + '"');
+      }
+      if (item.placeholder.length > 0) {
+        input_attributes.push('placeholder="' + item.placeholder + '"');
+      }
+
+      if (item.size != "md") {
+        input_attributes.push('size="' + item.size + '"');
+      }
+
+      if (item.num_rows.length > 0)
+      {
+        input_attributes.push('rows="'+ item.num_rows + '"');
+      }
+
+      if (item.max_rows.length > 0)
+      {
+        input_attributes.push('max-rows="'+ item.max_rows + '"');
+      }
+
+      //Smush all the form group attributes and input attributes into a form group
+      retval +=
+        this.get_spaces(9) +
+        "<b-form-group " +
+        form_group_attributes.join(" ") +
+        ">" +
+        this.line_break();
+      retval +=
+        this.get_spaces(12) +
+        "<b-form-textarea " +
+        input_attributes.join(" ") +
+        " trim></b-form-textarea>" +
         this.line_break();
       retval += this.get_spaces(9) + "</b-form-group>" + this.line_break();
 

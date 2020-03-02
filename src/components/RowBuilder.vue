@@ -54,7 +54,7 @@ export default {
       required: true
     },
     value: {
-      type: Array,
+      type: Object,
       required: true
     }
   },
