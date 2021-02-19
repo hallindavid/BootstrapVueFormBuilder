@@ -3,6 +3,9 @@
 <center><h1>Bootstrap Vue Form Builder</h1>
 <img src="src/assets/logo.png"></center><br />
 
+## Project Archived.  I did not keep up with the latest version of Vue, or Bootstrap Vue for that matter.
+
+Sorry all.
 
 ## Demos (<a href="https://hallindavid.github.io/BootstrapVueFormBuilder/#/builder">Production Deployment</a>)
 Quickly scaffold BootstrapVue form components and preview them in real time
